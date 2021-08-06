@@ -47,8 +47,12 @@ const buscarPokemon=( )=>{
 
     
     botonBuscar.addEventListener('click',async ()=>{
-    if(nombre.value){
-    crearHtml(await getPokemon(nombre.value));
+    
+    let nombreLower = nombre.value.toLowerCase();    
+
+    if(nombreLower){
+        
+    crearHtml(await getPokemon(nombreLower));
 
     botonBuscar.disabled =true;
     botonReset.disabled=false;
